@@ -40,7 +40,7 @@ export default function Home() {
                 <CardMedia className={classes.media} image={front} title="Second Image" />
                 <CardContent>
                     <Typography variant="body2" component="p">
-                        This is the second card with different content.
+                        This is the Second Card with Different Content.
                     </Typography>
                 </CardContent>
         </Card>
