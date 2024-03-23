@@ -37,7 +37,7 @@ export default function Menu() {
         <AppBar position="static" color="primary">
             <Toolbar>
                 <Typography variant="h6" color="textPrimary">
-                    Code Crew
+                    CeFriends
                 </Typography>
                 <Link to="/">
                     <IconButton aria-label="Home" style={isActive(location, "/")}>
