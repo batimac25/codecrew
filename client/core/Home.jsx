@@ -23,17 +23,29 @@ const useStyles = makeStyles(theme => ({
 export default function Home() {
     const classes = useStyles()
     return (
+        <div>
         <Card className={classes.card}>
 
-            <Typography variant="h6" className={classes.title}>Home Page</Typography>
+            <Typography variant="h6" className={classes.title}>CodeCrew</Typography>
             <CardMedia className={classes.media}
                 image={front} title="Freelancer" />
             <CardContent>
                 <Typography variant="body2" component="p">
-                    Welcome to the MERN Skeleton home page.
+                    Welcome to CodeCrew.
                 </Typography>
             </CardContent>
         </Card>
+        <Card className={classes.card}>
+                <Typography variant="h6" className={classes.title}>Second Card</Typography>
+                <CardMedia className={classes.media} image={front} title="Second Image" />
+                <CardContent>
+                    <Typography variant="body2" component="p">
+                        This is the second card with different content.
+                    </Typography>
+                </CardContent>
+        </Card>
+        </div>
+        
     )
 }
 

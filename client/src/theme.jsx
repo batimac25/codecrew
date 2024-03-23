@@ -5,6 +5,9 @@ const theme = createTheme({
         useNextVariants: true,
     },
     palette: {
+        background: {
+            default: '#f5f5f5', // Soft grey background
+        },
         primary: {
             light: '#5c67a3',
             main: '#3f4771',
