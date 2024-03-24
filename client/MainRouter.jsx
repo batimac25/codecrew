@@ -11,13 +11,15 @@ import Switch from 'react'
 import PrivateRoute from './lib/PrivateRoute.jsx'
 import EditProfile from './user/EditProfile.jsx'
 import Menu from './core/Menu'
+import CardList from './card/ListCards'; 
+import CreateCard from './card/CreateCard'; 
+import EditCard from './card/EditCard'; 
+import DeleteCard from './card/DeleteCard'; 
+
 function MainRouter() {
     return (
         <div>
             <Menu />
-
-
-
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/users" element={<Users />} />
@@ -32,6 +34,11 @@ function MainRouter() {
                     }
                 />
                 <Route path="/user/:userId" element={<Profile />} />
+
+                <Route path="/cards" element={<PrivateRoute><CardList /></PrivateRoute>} />
+                <Route path="/card/add" element={<PrivateRoute><CreateCard /></PrivateRoute>} />
+                <Route path="/card/edit/:cardId" element={<PrivateRoute><EditCard /></PrivateRoute>} />
+                <Route path="/card/delete/:cardId" element={<PrivateRoute><DeleteCard /></PrivateRoute>} />
             </Routes>
         </div>
     );

@@ -12,12 +12,15 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import Edit from '@material-ui/icons/Edit'
 import Person from '@material-ui/icons/Person'
+import PageviewIcon from '@material-ui/icons/Pageview'
 import Divider from '@material-ui/core/Divider'
 import DeleteUser from './DeleteUser'
 import auth from '../lib/auth-helper.js'
 import { read } from './api-user.js'
-import { useLocation, Navigate, Link } from 'react-router-dom'
+import { useLocation, Navigate, Link, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
+import ListCards from '../card/ListCards';
+import { Button } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     root: theme.mixins.gutters({
         maxWidth: 600,
@@ -37,6 +40,7 @@ export default function Profile({ match }) {
     const [redirectToSignin, setRedirectToSignin] = useState(false)
     const jwt = auth.isAuthenticated()
     const { userId } = useParams();
+    const navigate = useNavigate();
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
@@ -92,7 +96,21 @@ export default function Profile({ match }) {
                         new Date(user.created)).toDateString()} />
                 </ListItem>
             </List>
+            <Typography variant="h6" className={classes.title}>
+                My Posts
+            </Typography>
+            <List dense>
+                <ListItem>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => navigate('/cards')}>
+                        View My Posts
+                    </Button>
+                </ListItem>
+            </List>
         </Paper>
+
     )
 }
 
